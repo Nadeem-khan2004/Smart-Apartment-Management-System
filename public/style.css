@@ -1,0 +1,275 @@
+
+/* ===== Global Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #3730a3;
+    --background: #f1f5f9;
+    --text-dark: #172033;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --white: #ffffff;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    padding: 50px 24px;
+    color: var(--text-dark);
+    background:
+        radial-gradient(circle at top left, #dbeafe, transparent 40%),
+        linear-gradient(135deg, #f8fafc, #eef2ff);
+}
+
+/* ===== Main Container ===== */
+.container {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container h1 {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+    color: #172554;
+}
+
+.container > p {
+    color: var(--text-muted);
+    font-size: 16px;
+    margin-bottom: 42px;
+    line-height: 1.7;
+}
+
+/* ===== Forms Layout ===== */
+.form-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    text-align: left;
+    align-items: stretch;
+}
+
+/* ===== Form Cards ===== */
+form {
+    background: rgba(255, 255, 255, 0.92);
+    padding: 34px;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 12px 35px rgba(30, 41, 59, 0.07);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(30, 41, 59, 0.12);
+}
+
+form h2 {
+    font-size: 24px;
+    font-weight: 750;
+    margin-bottom: 10px;
+    color: #1e293b;
+}
+
+form h2::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 4px;
+    margin-top: 12px;
+    margin-bottom: 24px;
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+/* ===== Input Fields ===== */
+input {
+    display: block;
+    width: 100%;
+    padding: 15px 16px;
+    margin-bottom: 18px;
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--text-dark);
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease,
+                background 0.2s ease;
+}
+
+input::placeholder {
+    color: #94a3b8;
+}
+
+input:hover {
+    border-color: #a5b4fc;
+}
+
+input:focus {
+    background: var(--white);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12);
+}
+
+/* ===== Buttons ===== */
+button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 10px;
+    color: var(--white);
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    font-size: 16px;
+    font-weight: 700;
+    font-family: inherit;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(79, 70, 229, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease,
+                background 0.2s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #4338ca, #4f46e5);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(79, 70, 229, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* ===== Success and Error Messages ===== */
+#loginMessage,
+#registerMessage {
+    min-height: 20px;
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* ===== Keyboard Accessibility ===== */
+button:focus-visible {
+    outline: 3px solid #a5b4fc;
+    outline-offset: 3px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 700px) {
+    body {
+        padding: 35px 16px;
+    }
+
+    .container > p {
+        margin-bottom: 28px;
+    }
+
+    .form-container {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    form {
+        padding: 26px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        transform: none !important;
+    }
+
+    
+/* Owner Dashboard */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #334155;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #64748b;
+}
+
+/* Flats table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+}
+
+th,
+td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    background-color: #1e293b;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+tbody td {
+    color: #334155;
+}
+
+/* Dashboard messages */
+#flatsMessage {
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 600px) {
+    .container {
+        margin: 15px;
+        padding: 16px;
+        overflow-x: auto;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        white-space: nowrap;
+    }
+}
+
+}

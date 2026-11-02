@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Tenant Dashboard</title><link rel="stylesheet" href="owner.css"></head>
+<body><main class="dashboard">
+<header class="topbar"><div><h1>Tenant Dashboard</h1><p id="tenantWelcome">Your apartment information in one place.</p></div><button id="logoutButton" class="secondary">Log out</button></header>
+<section class="panel"><h2>My flat</h2><div id="myFlat">Loading flat details...</div><p id="flatMessage" class="message"></p></section>
+<section class="panel"><h2>Notices</h2><div id="noticesList">Loading notices...</div></section>
+<section class="panel"><h2>Water and electricity updates</h2><div id="utilitiesList">Loading updates...</div></section>
+<section class="panel"><h2>Rent payment history</h2><div class="table-wrapper"><table><thead><tr><th>Period</th><th>Amount</th><th>Payment date</th><th>Notes</th></tr></thead><tbody id="rentHistory"></tbody></table></div></section>
+<section class="panel"><h2>Submit maintenance request</h2><form id="maintenanceForm" class="form-grid"><input id="requestSubject" placeholder="Subject" required><textarea id="requestDescription" placeholder="Describe the issue" required></textarea><button>Submit request</button></form><p id="requestMessage" class="message"></p></section>
+<section class="panel"><h2>My maintenance requests</h2><div class="table-wrapper"><table><thead><tr><th>Subject</th><th>Description</th><th>Status</th><th>Submitted</th></tr></thead><tbody id="myRequests"></tbody></table></div></section>
+</main><script src="tenant.js"></script></body></html>

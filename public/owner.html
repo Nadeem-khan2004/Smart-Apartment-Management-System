@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Owner Dashboard | Smart Apartment</title>
+<link rel="stylesheet" href="owner.css">
+</head>
+<body>
+<main class="dashboard">
+  <header class="topbar"><div><h1>Owner Dashboard</h1><p>Manage flats, tenants and apartment services.</p></div><button class="secondary" id="logoutButton">Log out</button></header>
+  <section class="panel">
+    <h2>Add a flat</h2>
+    <form id="addFlatForm" class="form-grid">
+      <input id="flatNumber" placeholder="Flat number" required>
+      <input id="buildingName" placeholder="Building name">
+      <input id="monthlyRent" type="number" min="1" placeholder="Monthly rent (₹)" required>
+      <button type="submit">Add flat</button>
+    </form><p id="addFlatMessage" class="message"></p>
+  </section>
+  <section class="panel">
+    <h2>Flats</h2><div class="table-wrapper"><table><thead><tr><th>Flat</th><th>Building</th><th>Rent</th><th>Status</th><th>Tenant</th><th>Action</th></tr></thead>
+    <tbody id="flatsTableBody"><tr><td colspan="6">Loading flats...</td></tr></tbody></table></div><p id="flatsMessage" class="message"></p>
+  </section>
+  <section class="panel">
+    <h2>Assign a flat</h2>
+    <form id="assignmentForm" class="form-grid">
+      <select id="assignmentTenant" required><option value="">Choose tenant</option></select>
+      <select id="assignmentFlat" required><option value="">Choose available flat</option></select>
+      <button type="submit">Assign flat</button>
+    </form><p id="assignmentMessage" class="message"></p>
+  </section>
+  <section class="panel">
+    <h2>Registered tenants</h2><div class="table-wrapper"><table><thead><tr><th>Name</th><th>Email</th><th>Assigned flat</th></tr></thead><tbody id="tenantsTableBody"><tr><td colspan="3">Loading tenants...</td></tr></tbody></table></div><p id="tenantsMessage" class="message"></p>
+  </section>
+  <section class="panel">
+    <h2>Record rent payment</h2>
+    <form id="rentForm" class="form-grid">
+      <select id="rentTenant" required><option value="">Choose tenant</option></select>
+      <input id="rentAmount" type="number" min="1" placeholder="Amount paid (₹)" required>
+      <select id="rentMonth" required><option value="">Payment month</option><option value="1">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select>
+      <input id="rentYear" type="number" min="2000" max="2200" required>
+      <input id="rentNotes" placeholder="Notes (optional)">
+      <button type="submit">Record payment</button>
+    </form><p id="rentMessage" class="message"></p>
+    <h3>Payment history</h3><div class="table-wrapper"><table><thead><tr><th>Tenant</th><th>Flat</th><th>Period</th><th>Amount</th><th>Date</th></tr></thead><tbody id="rentTableBody"></tbody></table></div>
+  </section>
+  <section class="panel">
+    <h2>Publish notice</h2><form id="noticeForm" class="form-grid"><input id="noticeTitle" placeholder="Notice title" required><textarea id="noticeText" placeholder="Notice details" required></textarea><button>Publish notice</button></form><p id="noticeMessage" class="message"></p>
+    <h2>Water / electricity update</h2><form id="utilityForm" class="form-grid"><select id="utilityType"><option value="water">Water</option><option value="electricity">Electricity</option><option value="general">General</option></select><textarea id="utilityText" placeholder="Update details" required></textarea><button>Publish update</button></form><p id="utilityMessage" class="message"></p>
+  </section>
+  <section class="panel">
+    <h2>Maintenance requests</h2><div class="table-wrapper"><table><thead><tr><th>Tenant</th><th>Flat</th><th>Subject</th><th>Description</th><th>Status</th><th>Update</th></tr></thead><tbody id="maintenanceTableBody"></tbody></table></div><p id="maintenanceMessage" class="message"></p>
+  </section>
+</main>
+<script src="owner.js"></script>
+</body></html>

@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Apartment Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Smart Apartment Management</h1>
+        <p>Manage your apartment with ease.</p>
+
+        <div class="form-container">
+
+            <!-- Login Form -->
+            <form id="loginForm">
+                <h2>Login</h2>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Email address"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Password"
+                    required
+                >
+
+                <button type="submit">Login</button>
+                <p id="loginMessage"></p>
+            </form>
+
+            <!-- Tenant Registration Form -->
+            <form id="registerForm">
+                <h2>Tenant Registration</h2>
+
+                <input
+                    type="text"
+                    id="registerName"
+                    placeholder="Full name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="Email address"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="registerPassword"
+                    placeholder="Password (minimum 8 characters)"
+                    minlength="8"
+                    required
+                >
+
+                <button type="submit">Register</button>
+                <p id="registerMessage"></p>
+            </form>
+
+        </div>
+    </div>
+<!-- Owner Dashboard -->
+<div id="ownerDashboard" class="container" hidden>
+    <h1>Owner Dashboard</h1>
+    <p>Welcome, <span id="ownerName"></span>!</p>
+
+    <h2>All Flats</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Flat Number</th>
+                <th>Building</th>
+                <th>Monthly Rent</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="flatsTableBody">
+        </tbody>
+    </table>
+
+    <p id="flatsMessage"></p>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
