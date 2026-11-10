@@ -1,7 +1,7 @@
 const express = require("express");
 const db = require("./db");
 const authRoutes = require("./auth");
-const { verifyToken, ownerOnly } = require("./middleware");
+const { verifyToken, ownerOnly } = require("./authMiddleware");
 
 const app = express();
 const PORT = 8080;
@@ -293,4 +293,6 @@ app.patch("/api/maintenance/:id", verifyToken, ownerOnly, async (req, res) => {
     } catch (error) { serverError(res, "Update maintenance status error:", error); }
 });
 
-app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Server is running on port ${PORT}`);
+});
