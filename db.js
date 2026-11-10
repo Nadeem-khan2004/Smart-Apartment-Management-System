@@ -1,11 +1,16 @@
+
+require("dotenv").config();
 const mysql = require("mysql2");
 
-// Set your local MySQL password here. Do not upload real credentials to GitHub.
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "@Khan2004",
-    database: "apartment_db"
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+ port: Number(process.env.DB_PORT || 4000),
+    ssl: {
+        minVersion: "TLSv1.2"
+    }
 });
 
 db.connect((err) => {
@@ -13,7 +18,7 @@ db.connect((err) => {
         console.error("Database connection failed:", err.message);
         return;
     }
-    console.log("MySQL connected successfully!");
+    console.log("TiDB Cloud connected successfully!");
 });
 
 module.exports = db;
