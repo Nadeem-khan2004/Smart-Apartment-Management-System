@@ -4,7 +4,6 @@ const authRoutes = require("./auth");
 const { verifyToken, ownerOnly } = require("./authMiddleware");
 
 const app = express();
-const PORT = 8080;
 
 app.use(express.json());
 app.use(express.static("public"));
@@ -292,7 +291,5 @@ app.patch("/api/maintenance/:id", verifyToken, ownerOnly, async (req, res) => {
         res.json({ message: "Request status updated." });
     } catch (error) { serverError(res, "Update maintenance status error:", error); }
 });
+module.exports = app;
 
-app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server is running on port ${PORT}`);
-});
