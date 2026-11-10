@@ -7,6 +7,9 @@ const app = express();
 
 app.use(express.json());
 app.use(express.static("public"));
+app.get("/", (req, res) => {
+    res.redirect("/index.html");
+});
 app.use("/api/auth", authRoutes);
 
 function dbQuery(sql, params = []) {
